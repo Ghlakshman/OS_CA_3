@@ -50,45 +50,22 @@ int main()
 {
 printf("\t\t\t********PROGRAM ID MANAGER********\n");
 int inp,lp=1;
-while(lp)
-{
-printf("\t1.Allocate Memory");
-printf("\t2.Create Threads");
-printf("\t3.!!!EXIT!!!");
+
 printf("\n");
 printf("\n");
-printf("Enter your choice:\t");
-scanf("%d",&inp);
-switch(inp)
-{
-case 1:
-{
+
+printf("\t1.Allocating Memory");
 int r = allocate_map();
 if(r == 1){printf("\tMEMORY ALLOCATED SUCESSFULLY!!\n");}
 else printf("\tMEMORY NOT ALLOCATED PROPERLY\n");
-break;
-}
-
-case 2:
-{
 int sl;
+  
+
+printf("\t2.Creating Threads which would create 100 threads and request pid to check our pid manager");
 pthread_t newthread;
 printf("**\nEnter how much time the thread will sleep:\t");
 scanf("%d",&sl);
 pthread_create(&newthread,NULL,test_thread,&sl);
-break;
-}
-case 3:
-{
-lp=0;
-break;
-}
-default:
-{
-printf("program terminated due to wrong input,select again\n");
-}
-}
-}
 }
 
 
